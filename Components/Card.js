@@ -1,19 +1,17 @@
 import React from "react";
 import { View, Text, StyleSheet, ScrollView } from "react-native";
-import { Surface, IconButton, Colors } from "react-native-paper";
-import iconFont from "react-native-vector-icons/FontAwesome5";
+import { Surface, IconButton } from "react-native-paper";
 
 // Styles
 // import Styles from "../assets/styles/style";
 
-const Card = () => {
+const Card = (props) => {
+  const { icon, color, subtitle } = props;
   return (
     <View>
-      {/* <ScrollView>
-      </ScrollView> */}
       <Surface style={Styles.surface}>
-        <Text>WhatsApp Card</Text>
-        <IconButton icon="camera" color={Colors.red500} size={20} />
+        <IconButton icon={icon} color={color} size={55} />
+        <Text>{subtitle}</Text>
       </Surface>
     </View>
   );
@@ -23,12 +21,12 @@ export default Card;
 
 const Styles = StyleSheet.create({
   surface: {
-    padding: 8,
-    height: 100,
-    width: 100,
+    height: 120,
+    width: 160,
     alignItems: "center",
     justifyContent: "center",
     elevation: 1.5,
     borderRadius: 7,
+    margin: 7,
   },
 });
